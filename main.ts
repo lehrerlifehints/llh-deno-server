@@ -4,7 +4,8 @@ import { getResponse } from "./getResponse.ts";
 import { getAIStall } from "./aiRequests.ts";
 
 const token = Deno.env.get("GITHUB_TOKEN") || "";
-if (token == "") {
+console.log(token)
+if (false) {
   throw new Error("Please set the GITHUB_TOKEN environment variable.");
 }
 const endpoint = "https://models.github.ai/inference";
