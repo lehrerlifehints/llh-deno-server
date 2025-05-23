@@ -80,5 +80,9 @@ export default {
 } satisfies Deno.ServeDefaultExport;
 
 if (import.meta.main) {
-  await main();
+  if (Deno.env.get("DENO_DEPLOYMENT_ID")) {
+    Deno.serve(fetch)
+  } else {
+    await main();
+  }
 }
